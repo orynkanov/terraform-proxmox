@@ -54,7 +54,7 @@ resource "proxmox_vm_qemu" "vm" {
   boot              = "c"
   bootdisk          = "scsi0"
 
-  sockets           = 1
+  sockets           = var.sockets
   cores             = var.cores
   cpu               = "host"
   numa              = true
@@ -103,7 +103,7 @@ resource "time_sleep" "wait_2m" {
 
 resource "null_resource" "ssh_exec" {
   depends_on = [time_sleep.wait_2m]
-  
+
   provisioner "remote-exec" {
     connection {
       type     = "ssh"

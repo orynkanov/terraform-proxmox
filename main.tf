@@ -12,6 +12,7 @@ module "salt" {
   host = "salt"
   ip = "192.168.0.111"
   onboot = false
+  sockets = 1
   cores = 1
   memory = 1024
   disksize = 10
@@ -25,6 +26,7 @@ module "ansible" {
   host = "ansible"
   ip = "192.168.0.112"
   onboot = false
+  sockets = 1
   cores = 1
   memory = 1024
   disksize = 10
@@ -38,6 +40,7 @@ module "gitlab" {
   host = "gitlab"
   ip = "192.168.0.113"
   onboot = false
+  sockets = 1
   cores = 2
   memory = 4096
   disksize = 10
@@ -51,6 +54,7 @@ module "ipa01" {
   host = "ipa01"
   ip = "192.168.0.101"
   onboot = false
+  sockets = 1
   cores = 2
   memory = 2048
   disksize = 10
@@ -64,6 +68,7 @@ module "ipa02" {
   host = "ipa02"
   ip = "192.168.0.102"
   onboot = false
+  sockets = 1
   cores = 2
   memory = 2048
   disksize = 10
