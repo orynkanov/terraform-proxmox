@@ -5,6 +5,7 @@ variable "pm_password" {}
 variable "pm_host_sshuser" {}
 variable "pm_host_sshpassword" {}
 
+variable "onboot" { default = false }
 variable "cores" { default = 1 }
 variable "memory" { default = 1024 }
 variable "disksize" { default = 10 }

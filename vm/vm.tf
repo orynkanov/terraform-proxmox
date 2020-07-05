@@ -49,7 +49,7 @@ resource "proxmox_vm_qemu" "vm" {
   clone             = var.vmtemplate
   full_clone        = true
 
-  onboot            = false
+  onboot            = var.onboot
   agent             = 1
   hotplug           = "disk,network,usb,memory,cpu"
   scsihw            = "virtio-scsi-pci"

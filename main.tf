@@ -11,6 +11,7 @@ module "salt" {
   vmtemplate = "tmplcentos8v1"
   host = "salt"
   ip = "192.168.0.111"
+  onboot = false
   cores = 1
   memory = 1024
   disksize = 10
@@ -23,6 +24,7 @@ module "ansible" {
   vmtemplate = "tmplcentos8v1"
   host = "ansible"
   ip = "192.168.0.112"
+  onboot = false
   cores = 1
   memory = 1024
   disksize = 10
@@ -35,6 +37,7 @@ module "gitlab" {
   vmtemplate = "tmplcentos7v1"
   host = "gitlab"
   ip = "192.168.0.113"
+  onboot = false
   cores = 2
   memory = 4096
   disksize = 10
@@ -47,6 +50,7 @@ module "ipa01" {
   vmtemplate = "tmplcentos8v1"
   host = "ipa01"
   ip = "192.168.0.101"
+  onboot = false
   cores = 2
   memory = 2048
   disksize = 10
@@ -59,6 +63,7 @@ module "ipa02" {
   vmtemplate = "tmplcentos8v1"
   host = "ipa02"
   ip = "192.168.0.102"
+  onboot = false
   cores = 2
   memory = 2048
   disksize = 10
