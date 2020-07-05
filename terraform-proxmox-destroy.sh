@@ -6,20 +6,27 @@
 
 SCRIPTDIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
-export TF_VAR_pm_api_url='https://hyper01.yozhu.home:8006/api2/json'
-export TF_VAR_pm_node='hyper01'
-export TF_VAR_pm_user='root@pam'
-export TF_VAR_pm_host_sshuser='root'
+#start check
+if [[ ! -f $SCRIPTDIR/vars.cfg ]]; then
+    echo "File $SCRIPTDIR/vars.cfg not found"
+    exit 1
+fi
+#finish check
+
+# shellcheck source=/dev/null
+source "$SCRIPTDIR"/vars.cfg
 
 if [[ -z $TF_VAR_pm_password ]]; then
-    read -r -s -p "Enter password for proxmox login $TF_VAR_pm_user: " PASS
-    export TF_VAR_pm_password=$PASS
+    # shellcheck disable=SC2154
+    read -r -s -p "Enter password for proxmox login $TF_VAR_pm_user: " PMPASS
+    export TF_VAR_pm_password=$PMPASS
     echo
 fi
 
 if [[ -z $TF_VAR_pm_host_sshpassword ]]; then
-    read -r -s -p "Enter password for proxmox SSH host login $TF_VAR_pm_host_sshuser: " PASS
-    export TF_VAR_pm_host_sshpassword=$PASS
+    # shellcheck disable=SC2154
+    read -r -s -p "Enter password for proxmox SSH host login $TF_VAR_pm_host_sshuser: " SSHPASS
+    export TF_VAR_pm_host_sshpassword=$SSHPASS
     echo
 fi
 

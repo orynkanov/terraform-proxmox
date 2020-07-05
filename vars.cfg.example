@@ -1,0 +1,7 @@
+export TF_VAR_pm_api_url='https://HOST:8006/api2/json'
+export TF_VAR_pm_node='NODE'
+export TF_VAR_pm_user='root@pam'
+export TF_VAR_pm_host_sshuser='root'
+
+#export TF_VAR_pm_password='PASSWORD'
+#export TF_VAR_pm_host_sshpassword='PASSWORD'
