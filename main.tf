@@ -6,6 +6,33 @@ provider "proxmox" {
   pm_user           = var.pm_user
 }
 
+module "salt" {
+  source            = "./vm"
+  vmtemplate = "tmplcentos8v1"
+  host = "salt"
+  ip = "192.168.0.111"
+  pm_host_sshuser = var.pm_host_sshuser
+  pm_host_sshpassword = var.pm_host_sshpassword
+}
+
+module "ansible" {
+  source            = "./vm"
+  vmtemplate = "tmplcentos8v1"
+  host = "ansible"
+  ip = "192.168.0.112"
+  pm_host_sshuser = var.pm_host_sshuser
+  pm_host_sshpassword = var.pm_host_sshpassword
+}
+
+module "gitlab" {
+  source            = "./vm"
+  vmtemplate = "tmplcentos7v1"
+  host = "gitlab"
+  ip = "192.168.0.113"
+  pm_host_sshuser = var.pm_host_sshuser
+  pm_host_sshpassword = var.pm_host_sshpassword
+}
+
 module "ipa01" {
   source            = "./vm"
   vmtemplate = "tmplcentos8v1"
