@@ -102,7 +102,8 @@ resource "time_sleep" "wait_2m" {
 }
 
 resource "null_resource" "ssh_exec" {
-  depends_on = [time_sleep.wait_30_seconds]
+  depends_on = [time_sleep.wait_2m]
+  
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
