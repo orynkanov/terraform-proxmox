@@ -39,7 +39,7 @@ if ! terraform plan -out=plan; then
 fi
 #finish check
 
-if ! terraform apply -parallelism=2 plan; then
+if ! terraform apply plan; then
     echo "terraform apply failed"
     exit 1
 else
