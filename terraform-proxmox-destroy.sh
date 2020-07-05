@@ -29,6 +29,10 @@ if ! terraform init; then
     echo "terraform init failed"
     exit 1
 fi
+if ! terraform validate; then
+    echo "terraform validate failed"
+    exit 1
+fi
 if ! terraform destroy; then
     echo "terraform destroy failed"
     exit 1
