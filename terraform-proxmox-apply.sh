@@ -33,13 +33,13 @@ if ! terraform validate; then
     echo "terraform validate failed"
     exit 1
 fi
-if ! terraform plan -out plan; then
+if ! terraform plan -parallelism=1 -out=plan; then
     echo "terraform plan failed"
     exit 1
 fi
 #finish check
 
-if ! terraform apply plan; then
+if ! terraform apply -parallelism=1 plan; then
     echo "terraform apply failed"
     exit 1
 else
