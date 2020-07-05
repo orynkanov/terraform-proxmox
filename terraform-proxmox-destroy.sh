@@ -25,6 +25,10 @@ fi
 cd "$SCRIPTDIR" || exit 1
 
 #start check
+if ! terraform init; then
+    echo "terraform init failed"
+    exit 1
+fi
 if ! terraform destroy; then
     echo "terraform destroy failed"
     exit 1

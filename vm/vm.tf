@@ -56,17 +56,17 @@ resource "proxmox_vm_qemu" "vm" {
   boot              = "c"
   bootdisk          = "scsi0"
 
-  cores             = 1
   sockets           = 1
+  cores             = var.cores
   cpu               = "host"
   numa              = true
   
-  memory            = 1024
-  balloon           = 1024
+  memory            = var.memory
+  balloon           = var.memory
 
   disk {
     id              = 0
-    size            = 20
+    size            = var.disksize
     type            = "scsi"
     storage         = "zfs"
     storage_type    = "zfspool"

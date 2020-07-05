@@ -11,6 +11,9 @@ module "salt" {
   vmtemplate = "tmplcentos8v1"
   host = "salt"
   ip = "192.168.0.111"
+  cores = 1
+  memory = 1024
+  disksize = 10
   pm_host_sshuser = var.pm_host_sshuser
   pm_host_sshpassword = var.pm_host_sshpassword
 }
@@ -20,6 +23,9 @@ module "ansible" {
   vmtemplate = "tmplcentos8v1"
   host = "ansible"
   ip = "192.168.0.112"
+  cores = 1
+  memory = 1024
+  disksize = 10
   pm_host_sshuser = var.pm_host_sshuser
   pm_host_sshpassword = var.pm_host_sshpassword
 }
@@ -29,6 +35,9 @@ module "gitlab" {
   vmtemplate = "tmplcentos7v1"
   host = "gitlab"
   ip = "192.168.0.113"
+  cores = 2
+  memory = 4096
+  disksize = 10
   pm_host_sshuser = var.pm_host_sshuser
   pm_host_sshpassword = var.pm_host_sshpassword
 }
@@ -38,6 +47,9 @@ module "ipa01" {
   vmtemplate = "tmplcentos8v1"
   host = "ipa01"
   ip = "192.168.0.101"
+  cores = 2
+  memory = 2048
+  disksize = 10
   pm_host_sshuser = var.pm_host_sshuser
   pm_host_sshpassword = var.pm_host_sshpassword
 }
@@ -47,6 +59,9 @@ module "ipa02" {
   vmtemplate = "tmplcentos8v1"
   host = "ipa02"
   ip = "192.168.0.102"
+  cores = 2
+  memory = 2048
+  disksize = 10
   pm_host_sshuser = var.pm_host_sshuser
   pm_host_sshpassword = var.pm_host_sshpassword
 }

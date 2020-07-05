@@ -13,3 +13,7 @@ variable "pm_host_sshpassword" {}
 
 variable "vm_sshuser" { default = "root" }
 variable "vm_sshpassword" { default = "rootpw" }
+
+variable "cores" { default = 1 }
+variable "memory" { default = 1024 }
+variable "disksize" { default = 10 }
