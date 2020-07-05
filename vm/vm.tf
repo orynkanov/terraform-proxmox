@@ -36,7 +36,7 @@ resource "null_resource" "cloud_init_config_files" {
 }
 
 resource "proxmox_vm_qemu" "vm" {
-  depends_on = [ null_resource.cloud_init_config_files ]
+  depends_on = [null_resource.cloud_init_config_files]
 
   name              = var.host
   target_node       = "hyper01"
@@ -93,17 +93,15 @@ resource "proxmox_vm_qemu" "vm" {
   ipconfig0 = "ip=${var.ip}/${var.netmask},gw=${var.gw}"
 
   cicustom = "user=local:snippets/user_data-${var.host}.cfg"
-
-
 }
 
-resource "time_sleep" "wait_30_seconds" {
+resource "time_sleep" "wait_2m" {
   depends_on = [proxmox_vm_qemu.vm]
 
-  create_duration = "3m"
+  create_duration = "2m"
 }
 
-resource "null_resource" "next" {
+resource "null_resource" "ssh_exec" {
   depends_on = [time_sleep.wait_30_seconds]
   provisioner "remote-exec" {
     connection {
