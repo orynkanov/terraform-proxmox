@@ -94,6 +94,17 @@ resource "proxmox_vm_qemu" "vm" {
 
   cicustom = "user=local:snippets/user_data-${var.host}.cfg"
 
+
+}
+
+resource "time_sleep" "wait_30_seconds" {
+  depends_on = [proxmox_vm_qemu.vm]
+
+  create_duration = "3m"
+}
+
+resource "null_resource" "next" {
+  depends_on = [time_sleep.wait_30_seconds]
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
