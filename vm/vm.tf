@@ -27,7 +27,7 @@ resource "null_resource" "cloud_init_config_files" {
     type     = "ssh"
     user     = var.pm_host_sshuser
     password = var.pm_host_sshpassword
-    host     = "hyper01"
+    host     = var.pm_node
   }
   provisioner "file" {
     source      = local_file.cloud_init_user_data_file.filename
@@ -39,7 +39,7 @@ resource "proxmox_vm_qemu" "vm" {
   depends_on = [null_resource.cloud_init_config_files]
 
   name              = var.host
-  target_node       = "hyper01"
+  target_node       = var.pm_node
 
   os_type           = "cloud-init"
 

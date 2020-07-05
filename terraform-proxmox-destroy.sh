@@ -7,6 +7,7 @@
 SCRIPTDIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 export TF_VAR_pm_api_url='https://hyper01.yozhu.home:8006/api2/json'
+export TF_VAR_pm_node='hyper01'
 export TF_VAR_pm_user='root@pam'
 export TF_VAR_pm_host_sshuser='root'
 

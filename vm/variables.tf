@@ -8,6 +8,8 @@ variable "nameserver1" { default = "192.168.0.200" }
 variable "nameserver2" { default = "1.1.1.1" }
 variable "searchdomain1" { default = "yo.virt" }
 
+variable "pm_node" {}
+
 variable "pm_host_sshuser" {}
 variable "pm_host_sshpassword" {}
 
