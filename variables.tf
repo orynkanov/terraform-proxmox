@@ -13,4 +13,7 @@ variable "memory" { default = 1024 }
 variable "disksize" { default = 10 }
 variable "diskreplicate" { default = false }
 
-variable "sshcmd" { type = "list" ["ip addr"] }
+variable "sshcmd" {
+    type = "list"
+    default = ["ip addr"]
+}
