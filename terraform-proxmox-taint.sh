@@ -21,6 +21,6 @@ cd "$SCRIPTDIR" || exit 1
 #     exit 1
 # fi
 
-for TAINT in $(terraform show | grep module."$MODULE" | tr -d '# ' | tr -d ':'); do
+for TAINT in $(terraform show | grep module."$MODULE" | tr -d '# ' | tr -d ':' | grep -v '(tainted)'); do
     terraform taint "$TAINT"
 done
