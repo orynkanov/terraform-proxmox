@@ -24,6 +24,6 @@ variable "disksize" { default = 10 }
 variable "diskreplicate" { default = false }
 
 variable "sshcmd" {
-    type = "list"
+    type = list(string)
     default = ["ip addr"]
 }
