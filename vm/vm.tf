@@ -112,8 +112,6 @@ resource "null_resource" "ssh_exec" {
       password = var.vm_sshpassword
       host     = proxmox_vm_qemu.vm.ssh_host
   }
-    inline = [
-      "ip a"
-    ]
+    inline = var.sshcmd
   }
 }

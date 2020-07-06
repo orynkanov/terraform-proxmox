@@ -20,6 +20,12 @@ module "salt" {
   diskreplicate = true
   pm_host_sshuser = var.pm_host_sshuser
   pm_host_sshpassword = var.pm_host_sshpassword
+  sshcmd = [
+    "dnf install -y git",
+    "cd /opt",
+    "git clone https://github.com/orynkanov/salt-master-installer.git",
+    "/opt/salt-master-installer/salt-master-installer.sh"
+  ]
 }
 
 module "ansible" {
