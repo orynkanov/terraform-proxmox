@@ -7,7 +7,7 @@ provider "proxmox" {
 }
 
 module "salt" {
-  source            = "./vm"
+  source = "./vm"
   pm_node = var.pm_node
   vmtemplate = "tmplcentos8v1"
   host = "salt"
@@ -23,7 +23,7 @@ module "salt" {
 }
 
 module "ansible" {
-  source            = "./vm"
+  source = "./vm"
   pm_node = var.pm_node
   vmtemplate = "tmplcentos8v1"
   host = "ansible"
@@ -39,7 +39,7 @@ module "ansible" {
 }
 
 module "gitlab" {
-  source            = "./vm"
+  source = "./vm"
   pm_node = var.pm_node
   vmtemplate = "tmplcentos7v1"
   host = "gitlab"
@@ -55,7 +55,7 @@ module "gitlab" {
 }
 
 module "ipa01" {
-  source            = "./vm"
+  source = "./vm"
   pm_node = var.pm_node
   vmtemplate = "tmplcentos8v1"
   host = "ipa01"
@@ -71,7 +71,7 @@ module "ipa01" {
 }
 
 module "ipa02" {
-  source            = "./vm"
+  source = "./vm"
   pm_node = var.pm_node
   vmtemplate = "tmplcentos8v1"
   host = "ipa02"
