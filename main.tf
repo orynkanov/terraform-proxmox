@@ -17,6 +17,7 @@ module "salt" {
   cores = 1
   memory = 1024
   disksize = 10
+  diskreplicate = true
   pm_host_sshuser = var.pm_host_sshuser
   pm_host_sshpassword = var.pm_host_sshpassword
 }
@@ -32,6 +33,7 @@ module "ansible" {
   cores = 1
   memory = 1024
   disksize = 10
+  diskreplicate = true
   pm_host_sshuser = var.pm_host_sshuser
   pm_host_sshpassword = var.pm_host_sshpassword
 }
@@ -47,6 +49,7 @@ module "gitlab" {
   cores = 2
   memory = 4096
   disksize = 10
+  diskreplicate = true
   pm_host_sshuser = var.pm_host_sshuser
   pm_host_sshpassword = var.pm_host_sshpassword
 }
@@ -62,6 +65,7 @@ module "ipa01" {
   cores = 2
   memory = 2048
   disksize = 10
+  diskreplicate = true
   pm_host_sshuser = var.pm_host_sshuser
   pm_host_sshpassword = var.pm_host_sshpassword
 }
@@ -77,6 +81,7 @@ module "ipa02" {
   cores = 2
   memory = 2048
   disksize = 10
+  diskreplicate = true
   pm_host_sshuser = var.pm_host_sshuser
   pm_host_sshpassword = var.pm_host_sshpassword
 }

@@ -68,6 +68,7 @@ resource "proxmox_vm_qemu" "vm" {
     type            = "scsi"
     storage         = "zfs"
     storage_type    = "zfspool"
+    replicate       = var.diskreplicate
   }
 
   network {
