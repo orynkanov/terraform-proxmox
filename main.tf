@@ -23,6 +23,8 @@ module "salt" {
   sshcmd = [
     "dnf install -y git",
     "cd /opt",
+    "git clone https://github.com/orynkanov/salt-minion-installer.git",
+    "/opt/salt-master-installer/salt-minion-installer.sh",
     "git clone https://github.com/orynkanov/salt-master-installer.git",
     "/opt/salt-master-installer/salt-master-installer.sh"
   ]
