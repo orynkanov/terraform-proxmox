@@ -21,7 +21,7 @@ module "salt" {
   pm_host_sshuser = var.pm_host_sshuser
   pm_host_sshpassword = var.pm_host_sshpassword
   sshcmd = [
-    "echo '192.168.0.111 salt >> /etc/hosts'",
+    "echo '192.168.0.111 salt' >> /etc/hosts",
     "dnf install -y git",
     "cd /opt",
     "git clone https://github.com/orynkanov/salt-minion-installer.git",
