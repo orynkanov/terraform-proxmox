@@ -77,6 +77,13 @@ module "ipa01" {
   diskreplicate = true
   pm_host_sshuser = var.pm_host_sshuser
   pm_host_sshpassword = var.pm_host_sshpassword
+  sshcmd = [
+    "echo '192.168.0.111 salt' >> /etc/hosts",
+    "dnf install -y git",
+    "cd /opt",
+    "git clone https://github.com/orynkanov/salt-minion-installer.git",
+    "/opt/salt-minion-installer/salt-minion-installer.sh"
+  ]
 }
 
 module "ipa02" {
@@ -93,4 +100,11 @@ module "ipa02" {
   diskreplicate = true
   pm_host_sshuser = var.pm_host_sshuser
   pm_host_sshpassword = var.pm_host_sshpassword
+  sshcmd = [
+    "echo '192.168.0.111 salt' >> /etc/hosts",
+    "dnf install -y git",
+    "cd /opt",
+    "git clone https://github.com/orynkanov/salt-minion-installer.git",
+    "/opt/salt-minion-installer/salt-minion-installer.sh"
+  ]
 }
